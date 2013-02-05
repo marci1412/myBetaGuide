@@ -1,0 +1,55 @@
+//Here comes Style for Navigation
+/*only for navigation content*/
+#navigation {
+    height: 100%;
+    width: device-width;
+}
+
+/*for each unordered list within an unordered list*/
+.inner_nav_ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+/*only headlines in navigation*/
+li.nav_headline {
+    margin: 0px;
+    border-top: 1px solid #Da9BA4;
+    border-bottom: 1px solid #444444;
+    border-left: 0px;
+    border-right: 0px;
+    list-style: none;
+    font-size: 10pt;
+}
+
+/*only headlines in navigation*/
+.nav_headline {
+    padding: 3px;
+    background-color: #CB737F;
+    background-image:linear-gradient(top, #CB737F 0%, #B53849 80%);
+    background-image:-webkit-linear-gradient(top, #CB737F 0%, #B53849 80%);
+    background-image:-ms-linear-gradient(top, #CB737F 0%, #B53849 80%);
+}
+
+/*for each list item in navigation*/
+.nav_listitem {
+    list-style: none;
+    padding-left: 15px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    font-size: 11pt;
+    text-decoration: none;
+    background-color: #BCCCD4;
+    background-image:linear-gradient(top, #BCCCD4 0%, #A5BBC5 80%);
+    background-image:-webkit-linear-gradient(top, #BCCCD4 0%, #A5BBC5 80%);
+    background-image:-ms-linear-gradient(top, #BCCCD4 0%, #A5BBC5 80%);
+    border-bottom: 1px solid #444444;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+/*for each Link in navigation*/
+a.nav_a {
+    color: #111111;
+    text-decoration: none;
+}

@@ -1,0 +1,245 @@
+html, body {height:100%;font-size:14px;width:100%;padding: 0px;margin: 0px;}
+html {height: 100%;width: 100%;}
+
+body {
+    text-align: left;
+    background-color:#DDDDDD;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    //background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    //background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    //background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    //background-image:-webkit-gradient(
+      //  linear,
+      //  left top,
+      //  left bottom,
+      //  color-stop(0, #A7A7A7),
+      //  color-stop(0.51, #E4E4E4)
+    //);
+}
+
+/*for each page*/
+.ui-page {
+    height: 100%;
+    color: #222222;
+    width: device-width;
+}
+
+/*for each header*/
+.ui-header {
+    margin: 0px;
+    padding: 0px;
+    height: 10%;
+    width: 100%;
+    border-bottom: 1px solid #444444;
+    background-color: #CB737F;
+    background-image:linear-gradient(top, #CB737F 0%, #B53849 80%);
+    background-image:-webkit-linear-gradient(top, #CB737F 0%, #B53849 80%);
+    background-image:-ms-linear-gradient(top, #CB737F 0%, #B53849 80%);
+}
+
+/*for each headline*/
+.headline {
+    padding: 10px;
+    font-size: 16px;
+    color: #222222;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*for each content*/
+.ui-content {
+    background-color: #E9EEF1;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+    overflow: visible; 
+    overflow-x: hidden;
+}
+
+/*for each content except navigation*/
+.content {
+    height: 90%;
+}
+
+/*----------------------------------------- Lecture Directory -------------------------------------------*/
+
+#lecture_directory {
+	
+}
+
+#lecture_directory_accordion {
+    width: device-width;
+	padding: 0px;
+	margin: 0px;
+//	border-top: 1px solid grey;
+//	border-bottom: 0px;
+//	border-left: 0px;
+//	border-right: 0px;
+}
+
+.lecture_directory_acc_element {
+	background-color: #BCCCD4;
+    background-image:linear-gradient(top, #BCCCD4 0%, #A5BBC5 80%);
+    background-image:-webkit-linear-gradient(top, #BCCCD4 0%, #A5BBC5 80%);
+    background-image:-ms-linear-gradient(top, #BCCCD4 0%, #A5BBC5 80%);
+	border-bottom: 1px solid grey;
+	border-top: 1px solid grey;
+	border-left: 0px;
+	border-right: 0px;
+}
+
+.lecture_directory_headings {
+	
+}
+
+/*#lecture_directory_selectionmenu {
+    clear: right;
+    //width: 15%;
+    //font-size: 8pt;
+}*/
+
+/*------------------------------------------- Lecture Times ---------------------------------------------*/
+
+#lecture_times_table {
+    font-size: 8pt;
+    top: 0px;
+    margin: 0px;
+    background-color: #A5BBC5;
+    width: device-width;
+}
+
+.main_menu_button {
+    background-color: #BC4D5C;
+    background-image:linear-gradient(top, #BC4D5C 0%, #B53849 80%);
+    background-image:-webkit-linear-gradient(top, #BC4D5C 0%, #B53849 80%);
+    background-image:-ms-linear-gradient(top, #BC4D5C 0%, #B53849 80%);
+    border-left: 1px solid #111111;
+    border-top: 1px solid #111111;
+    border-bottom: 1px solid #111111;
+    border-right: 1px solid #111111;
+    color: #000000;
+}
+
+a.main_menu_button {
+    text-decoration: none;
+}
+
+/*------------------------------------------- Navigation ------------------------------------------------*/
+/*only for navigation content*/
+#navigation {
+    height: 100%;
+    width: device-width;
+	margin: 0px;
+	padding: 0px;
+}
+
+/*for each unordered list within an unordered list*/
+.inner_nav_ul {
+    margin: 0px;
+    padding: 0px;
+	margin-bottom: -18px;
+}
+
+/*only headlines in navigation*/
+li.nav_headline {
+    border-top: 1px solid #Da9BA4;
+    border-bottom: 1px solid #444444;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+/*only headlines in navigation*/
+.nav_headline {
+    margin: 0px;
+    background-color: #CB737F;
+    background-image:linear-gradient(top, #CB737F 0%, #B53849 80%);
+    background-image:-webkit-linear-gradient(top, #CB737F 0%, #B53849 80%);
+    background-image:-ms-linear-gradient(top, #CB737F 0%, #B53849 80%);
+    list-style: none;
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+/*for each list item in navigation*/
+.nav_listitem {
+    list-style: none;
+    padding-left: 10px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    font-size: 11pt;
+    text-decoration: none;
+    background-color: #BCCCD4;
+    background-image:linear-gradient(top, #BCCCD4 0%, #A5BBC5 80%);
+    background-image:-webkit-linear-gradient(top, #BCCCD4 0%, #A5BBC5 80%);
+    background-image:-ms-linear-gradient(top, #BCCCD4 0%, #A5BBC5 80%);
+    border-bottom: 1px solid #444444;
+    border-left: 0px;
+    border-right: 0px;
+	margin-top: -18px;
+}
+
+/*for each Link in navigation*/
+a.nav_a {
+    color: #111111;
+    text-decoration: none;
+    padding-left: 10px;
+}
+
+/*---------------------------------------------------------------------------------------------------------*/
+
+/*
+.status {
+    background-color:#333333;
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:1em;
+    margin:0px auto;
+    padding:2px 10px;
+    text-align:center;
+    width:100%;
+    max-width:175px;
+}
+
+.status.complete {
+    background-color:#4B946A;
+}
+
+.hide {
+    display:none;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+/* portrait */
+/* @media screen and (max-aspect-ratio: 1/1) */
+.app {
+    background-position:center top;
+    height:100px;              /* adds enough room for text */
+    padding:180px 0px 0px 0px; /* background height - shadow offset */
+}
+
+/* lanscape (when wide enough) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:445px) {
+    .app {
+        background-position:left center;
+        height:140px;       /* height + padding = background image size */
+        padding-left:170px; /* background width */
+        padding-top:60px;   /* center the text */
+    }
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name = "format-detection" content = "telephone=no"/>
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width;" />
+        <link rel="stylesheet" type="text/css" href="../../css/global.css" /><!-- selber eingefügt -->
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.2.0.css" /><!-- selber eingefügt -->
+		
+        <script src="../../js/jquery.js"></script><!-- selber eingefügt -->
+        <script src="../../js/jquery.mobile-1.2.0.js"></script><!-- selber eingefügt -->
+        <script src="../../connect/json-jquery.js" type="application/javascript"></script><!-- selber eingefügt -->
+        <title>LectureDirectory</title>
+    </head>
+    <body>
+        <div data-role="page" id="lecture_directory">
+            <div data-role="header">
+                <a href="../_navigation.html" data-role="button" data-transition="reverse slide" class="main_menu_button">Men&uuml;</a>
+                <div class="headline">Vorlesungsverzeichnis</div>
+                <div id="lecture_directory_headerright"></div>
+            </div>
+            <div data-role="content" class="content">
+                <div id="lecture_directory_data"></div>
+				<div data-role="collapsible-set" data-collapsed-icon="arrow-l" data-expanded-icon="arrow-d" data-iconpos="right" data-inset="false" id="lecture_directory_accordion">
+				</div>
+            </div>
+        </div>
+    </body>
+</html>
