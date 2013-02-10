@@ -84,7 +84,7 @@ $(document).ready(function(){
         	});
 		/*} else {//if no internet connection available
 			alert("Aktueller Status: "+checkConnection());
-		}*
+		}*/
     });
     
     //This function is for determining the entire row values for lecture times

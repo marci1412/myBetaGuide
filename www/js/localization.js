@@ -73,7 +73,7 @@ var localization = {
 			"kiz" : "Communication and Information Center",
 			"student_counselling" : "Student Counselling",
 			"secretarys_office" : "Secretarys Office",
-			"examination_board" : "Pr&uuml;fungsausschuss"
+			"examination_board" : "Examination Board"
 		},
 		"study" : {
 			"title" : "Study",
