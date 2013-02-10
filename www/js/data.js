@@ -4,59 +4,42 @@ $(document).ready(function(){
 	var lecture_directory_link = 'http://campusonline.uni-ulm.de/qislsf/rds?state=wtree&search=1&trex=step&roo';
 	var first = true;
 				  
-	//only a test for JSON
-	$('#getdata-button').live('click', function(){
-        var url = 'http://localhost:8888?json=1';
-        $.getJSON(url, function(data) {
-            $('#showdata').append("<p> Hier sieht man die Anzahl der Seiten: "+data.pages+"</p>");
-        });
-	});
-				  
 /*------------------------------ NAVIGATION -----------------------------------------------------------------------------------------------------------------------*/
 
-	/*$('#navigation').live('pageshow', function() {
+	$('#navigation').live('pageinit', function() {
 		$('#navigation').find('div.content').html(""+
 			"<ul data-role=\"listview\" id=\"nav_list\">"+
-				"<li class=\"nav_headline\">Universit&auml;t Ulm</li>"+
-				"<ul class=\"inner_nav_ul\">"+
-					"<a href=\"uni_ulm/kiz.html\" data-transition=\"slide\" class=\"nav_a\"><li class=\"nav_listitem\">Kommunikations- &amp; Informationszentrum</li></a>"+
-					"<a href=\"uni_ulm/student_counselling.html\" data-transition=\"slide\" class=\"nav_a\"><li class=\"nav_listitem\">Studienberatung</li></a>"+
-					"<a href=\"uni_ulm/secretarys_office.html\" data-transition=\"slide\" class=\"nav_a\"><li class=\"nav_listitem\">Studiensekretariat</li></a>"+
-					"<a href=\"uni_ulm/examination_board.html\" data-transition=\"slide\" class=\"nav_a\"><li class=\"nav_listitem\">Pr&uuml;fungsausschuss</li></a>"+
-				"</ul>"+
-				"<li class=\"nav_headline\">Studium</li>"+
-				"<ul class=\"inner_nav_ul\">"+
-					"<a href=\"study/re_registration.html\" data-transition=\"slide\" class=\"nav_a\"><li class=\"nav_listitem\">R&uuml;ckmeldung</li></a>"+
-					"<a href=\"study/lecture_times.html\" data-transition=\"slide\" class=\"nav_a\"><li class=\"nav_listitem\">Vorlesungszeiten</li></a>"+
-					"<a href=\"study/lecture_directory.html\" data-transition=\"slide\" class=\"nav_a\"><li class=\"nav_listitem\">Vorlesungsverzeichnis</li></a>"+
-					"<a href=\"study/study_plans.html\" data-transition=\"slide\" class=\"nav_a\"><li class=\"nav_listitem\">Studienpl&auml;ne</li></a>"+
-					"<a href=\"study/exam_regulations.html\" data-transition=\"slide\" class=\"nav_a\"><li class=\"nav_listitem\">Pr&uuml;fungsordnung</li></a>"+
-					"<a href=\"study/student_card.html\" data-transition=\"slide\" class=\"nav_a\"><li class=\"nav_listitem\">Studierendenausweis</li></a>"+
-				"</ul>"+
-				"<li class=\"nav_headline\">Studentenwerk</li>"+
-				"<ul class=\"inner_nav_ul\">"+
-					"<a href=\"student_services/university_gastronomy.html\" data-transition=\"slide\" class=\"nav_a\"><li class=\"nav_listitem\">Hochschulgastronomie</li></a>"+
-					"<a href=\"student_services/counselling_kids_social.html\" data-transition=\"slide\" class=\"nav_a\"><li class=\"nav_listitem\">Beratung, Kinder, Soziales</li></a>"+
-					"<a href=\"student_services/habitation.html\" data-transition=\"slide\" class=\"nav_a\"><li class=\"nav_listitem\">Wohnen</li></a>"+
-					"<a href=\"student_services/student_financial_aid.html\" data-transition=\"slide\" class=\"nav_a\"><li class=\"nav_listitem\">Studienfinanzierung</li></a>"+
-				"</ul>"+
-				"<li class=\"nav_headline\">Extras</li>"+
-				"<ul class=\"inner_nav_ul\">"+
-					"<a href=\"extras/faq.html\" data-transition=\"slide\" class=\"nav_a\"><li class=\"nav_listitem\">FAQ</li></a>"+
-					"<a href=\"extras/campus_map.html\" data-transition=\"slide\" class=\"nav_a\"><li class=\"nav_listitem\">Campusplan</li></a>"+
-					"<a href=\"extras/bus_schedule.html\" data-transition=\"slide\" class=\"nav_a\"><li class=\"nav_listitem\">Busfahrplan</li></a>"+
-				"</ul>"+
-				"<li class=\"nav_headline\">Optionen</li>"+
-				"<ul class=\"inner_nav_ul\">"+
-					"<a href=\"options/settings.html\" data-transition=\"slide\" class=\"nav_a\"><li class=\"nav_listitem\">Einstellungen</li></a>"+
-				"</ul>"+
+	 			"<li data-role=\"list-divider\" role=\"heading\" class=\"nav_headline\">"+getLangObject().uniulm.title+"</li>"+//Heading Ulm University
+	 				"<li data-icon=\"false\" class=\"nav_listitem ui-btn\"><a href=\"uni_ulm/kiz.html\" data-transition=\"slide\" class=\"nav_a\">"+getLangObject().uniulm.kiz+"</a></li>"+
+	 				"<li data-icon=\"false\" class=\"nav_listitem ui-btn\"><a href=\"uni_ulm/student_counselling.html\" data-transition=\"slide\" class=\"nav_a\">"+getLangObject().uniulm.student_counselling+"</a></li>"+
+	 				"<li data-icon=\"false\" class=\"nav_listitem ui-btn\"><a href=\"uni_ulm/secretarys_office.html\" data-transition=\"slide\" class=\"nav_a\">"+getLangObject().uniulm.secretarys_office+"</a></li>"+
+	 				"<li data-icon=\"false\" class=\"nav_listitem ui-btn\"><a href=\"uni_ulm/examination_board.html\" data-transition=\"slide\" class=\"nav_a\">"+getLangObject().uniulm.examination_board+"</a></li>"+
+	 			"<li data-role=\"list-divider\" role=\"heading\" class=\"nav_headline\">"+getLangObject().study.title+"</li>"+//Heading Study
+	 				"<li data-icon=\"false\" class=\"nav_listitem ui-btn\"><a href=\"study/re_registration.html\" data-transition=\"slide\" class=\"nav_a\">"+getLangObject().study.re_registration+"</a></li>"+
+	 				"<li data-icon=\"false\" class=\"nav_listitem ui-btn\"><a href=\"study/lecture_times.html\" data-transition=\"slide\" class=\"nav_a\">"+getLangObject().study.lecture_times+"</a></li>"+
+					"<li data-icon=\"false\" class=\"nav_listitem ui-btn\"><a href=\"study/lecture_directory.html\" data-transition=\"slide\" class=\"nav_a\">"+getLangObject().study.lecture_directory+"</a></li>"+
+	 				"<li data-icon=\"false\" class=\"nav_listitem ui-btn\"><a href=\"study/study_plans.html\" data-transition=\"slide\" class=\"nav_a\">"+getLangObject().study.study_plans+"</a></li>"+
+	 				"<li data-icon=\"false\" class=\"nav_listitem ui-btn\"><a href=\"study/exam_regulations.html\" data-transition=\"slide\" class=\"nav_a\">"+getLangObject().study.exam_regulations+"</a></li>"+
+	 				"<li data-icon=\"false\" class=\"nav_listitem ui-btn\"><a href=\"study/student_card.html\" data-transition=\"slide\" class=\"nav_a\">"+getLangObject().study.student_card+"</a></li>"+
+	 			"<li data-role=\"list-divider\" role=\"heading\" class=\"nav_headline\">"+getLangObject().student_services.title+"</li>"+//Heading Student Services
+	 				"<li data-icon=\"false\" class=\"nav_listitem ui-btn\"><a href=\"student_services/university_gastronomy.html\" data-transition=\"slide\" class=\"nav_a\">"+getLangObject().student_services.university_gastronomy+"</a></li>"+
+	 				"<li data-icon=\"false\" class=\"nav_listitem ui-btn\"><a href=\"student_services/counselling_kids_social.html\" data-transition=\"slide\" class=\"nav_a\">"+getLangObject().student_services.counselling_kids_social+"</a></li>"+
+	 				"<li data-icon=\"false\" class=\"nav_listitem ui-btn\"><a href=\"student_services/habitation.html\" data-transition=\"slide\" class=\"nav_a\">"+getLangObject().student_services.habitation+"</a></li>"+
+	 				"<li data-icon=\"false\" class=\"nav_listitem ui-btn\"><a href=\"student_services/student_financial_aid.html\" data-transition=\"slide\" class=\"nav_a\">"+getLangObject().student_services.student_financial_aid+"</a></li>"+
+	 			"<li data-role=\"list-divider\" role=\"heading\" class=\"nav_headline\">"+getLangObject().extras.title+"</li>"+//Heading Extras
+	 				"<li data-icon=\"false\" class=\"nav_listitem ui-btn\"><a href=\"extras/faq.html\" data-transition=\"slide\" class=\"nav_a\">"+getLangObject().extras.faq+"</a></li></a>"+
+	 				"<li data-icon=\"false\" class=\"nav_listitem ui-btn\"><a href=\"extras/campus_map.html\" data-transition=\"slide\" class=\"nav_a\">"+getLangObject().extras.campus_map+"</a></li>"+
+	 				"<li data-icon=\"false\" class=\"nav_listitem ui-btn\"><a href=\"extras/bus_schedule.html\" data-transition=\"slide\" class=\"nav_a\">"+getLangObject().extras.bus_schedule+"</a></li>"+
+	 			"<li data-role=\"list-divider\" role=\"heading\" class=\"nav_headline\">"+getLangObject().options.title+"</li>"+//Heading Options
+	 				"<li data-icon=\"false\" class=\"nav_listitem ui-btn\"><a href=\"options/settings.html\" data-transition=\"slide\" class=\"nav_a\">"+getLangObject().options.settings+"</a></li>"+
 			"</ul>");
-	});*/
+	});
 
 /*------------------------------ KIZ ------------------------------------------------------------------------------------------------------------------------------*/
 				  
 	$('#kiz').live('pageshow', function(){							//start when page loads
-		if(getOnlineStatus()) {
+		$('#kiz').find('div.headline').text(getLangObject().pages.kiz.headline);
+		if(checkConnection()) {
 			var url = 'http://localhost:8888/universitat-ulm/kiz/?json=1';//Url from Kiz-Site of WP-Server
 			$.getJSON(url, function(data) {								//Get JSON Data
 				var text = data.page.content;							//store text
@@ -80,7 +63,9 @@ $(document).ready(function(){
 /*------------------------------ Lecture Times --------------------------------------------------------------------------------------------------------------------*/
                   
     $('#lecture_times').live('pageshow', function(){
-		if(getOnlineStatus()) {
+		$('#lecture_times').find('div.headline').text(getLangObject().pages.lecture_times.headline);
+		if(checkConnection()) {
+			alert("Aktueller Status: "+checkConnection());
         	var url = 'http://www.uni-ulm.de/studium/studienorganisation/vorlesungszeiten.html';
         	$.get(url, function(data) {
         	    //alert(data); //uncomment this for debug
@@ -98,7 +83,7 @@ $(document).ready(function(){
                             	                "</table>");
         	});
 		} else {//if no internet connection available
-			alert("Keine Verbindung! Daten konnten nicht geladen werden!");
+			alert("Aktueller Status: "+checkConnection());
 		}
     });
     
@@ -117,6 +102,8 @@ $(document).ready(function(){
         var url = 'http://campusonline.uni-ulm.de/qislsf/rds?state=wtree&search=1&trex=step&roo';
 		var institute = "";
 		var subject = "";
+								 
+		$('#lecture_directory').find('div.headline').text(getLangObject().pages.lecture_directory.headline);
 		
         //$.get(url, function(data) {
 			/*var tmp = $(data).find('a#choosesemester');
@@ -129,8 +116,6 @@ $(document).ready(function(){
 			//	}
 			//}
 		//});
-		
-		
 								 
 		$.when($.get(url)).then(function(resp){//Data from Lecture Directory
 			//alert(resp);
@@ -162,40 +147,6 @@ $(document).ready(function(){
 				});
 			});
 		});
-								 
-		//Anwendungsfächer
-		/*$.getAllLectures('http://campusonline.uni-ulm.de/qislsf/rds?state=wtree&search=1&trex=step&root120122=11605|11027|11632|11354|11401|11408&P.vx=kurz');
-		$.getAllLectures('http://campusonline.uni-ulm.de/qislsf/rds?state=wtree&search=1&trex=step&root120122=11605|11027|11632|11354|11401|11651&P.vx=kurz');
-		$.getAllLectures('http://campusonline.uni-ulm.de/qislsf/rds?state=wtree&search=1&trex=step&root120122=11605|11027|11632|11354|11401|11544&P.vx=kurz');
-		$.getAllLectures('http://campusonline.uni-ulm.de/qislsf/rds?state=wtree&search=1&trex=step&root120122=11605|11027|11632|11354|11401|12541&P.vx=kurz');
-		$.getAllLectures('http://campusonline.uni-ulm.de/qislsf/rds?state=wtree&search=1&trex=step&root120122=11605|11027|11632|11354|11401|12542&P.vx=kurz');
-		$.getAllLectures('http://campusonline.uni-ulm.de/qislsf/rds?state=wtree&search=1&trex=step&root120122=11605|11027|11632|11354|11401|12543&P.vx=kurz');
-		$.getAllLectures('http://campusonline.uni-ulm.de/qislsf/rds?state=wtree&search=1&trex=step&root120122=11605|11027|11632|11354|11401|11399&P.vx=kurz');
-		//Bachelorseminare
-		$.getAllLectures('http://campusonline.uni-ulm.de/qislsf/rds?state=wtree&search=1&trex=step&root120122=11605|11027|11632|11354|11610&P.vx=kurz');
-		//Mathematik
-		$.getAllLectures('http://campusonline.uni-ulm.de/qislsf/rds?state=wtree&search=1&trex=step&root120122=11605|11027|11632|11354|11030&P.vx=kurz');
-		//Mediale Informatik
-        $.getAllLectures('http://campusonline.uni-ulm.de/qislsf/rds?state=wtree&search=1&trex=step&root120122=11605|11027|11632|11354|11590&P.vx=kurz');
-		//Praktische Informatik
-		$.getAllLectures('http://campusonline.uni-ulm.de/qislsf/rds?state=wtree&search=1&trex=step&root120122=11605|11027|11632|11354|11157&P.vx=kurz');
-		//Proseminare
-		$.getAllLectures('http://campusonline.uni-ulm.de/qislsf/rds?state=wtree&search=1&trex=step&root120122=11605|11027|11632|11354|11194&P.vx=kurz');
-		//Schwerpunkt Informatik
-		$.getAllLectures('http://campusonline.uni-ulm.de/qislsf/rds?state=wtree&search=1&trex=step&root120122=11605|11027|11632|11354|11403&P.vx=kurz');
-		//Schwerpunkt Medieninformatik
-		$.getAllLectures('http://campusonline.uni-ulm.de/qislsf/rds?state=wtree&search=1&trex=step&root120122=11605|11027|11632|11354|11395&P.vx=kurz');
-								 
-		//Technische und Systemnahe Informatik
-		$.getAllLectures('http://campusonline.uni-ulm.de/qislsf/rds?state=wtree&search=1&trex=step&root120122=11605|11027|11632|11354|11362&P.vx=kurz');
-		//Theoretische Methoden der Informatik
-		$.getAllLectures('http://campusonline.uni-ulm.de/qislsf/rds?state=wtree&search=1&trex=step&root120122=11605|11027|11632|11354|11376&P.vx=kurz');
-		//Anwendungsporjekt Software Engineering
-		$.getAllLectures('http://campusonline.uni-ulm.de/qislsf/rds?state=wtree&search=1&trex=step&root120122=11605|11027|11632|11354|12612&P.vx=kurz');
-		//Schwerpunkt Software Engineering
-		$.getAllLectures('http://campusonline.uni-ulm.de/qislsf/rds?state=wtree&search=1&trex=step&root120122=11605|11027|11632|11354|12610&P.vx=kurz');
-		//Software Engineering
-		$.getAllLectures('http://campusonline.uni-ulm.de/qislsf/rds?state=wtree&search=1&trex=step&root120122=11605|11027|11632|11354|12611&P.vx=kurz');*/
 								 								 
 		return false;
     });
@@ -260,85 +211,25 @@ $(document).ready(function(){
 		//alert("Test");
 	});
 
-//});
-//var pageToLoad = $(this).attr("href");
-// varaible für den neuen inhalt
-//var pageContent;
-
-//$('#vz_content').load(start_page);
-
-// die externe seite laden, der inhalt ist dann in 'data'
-/*$.get(pageToLoad, function(data){
- 
- // den inhalt zwischenspeichern
- pageContent=data;
- //pageContent = deleteSpaces(pageContent);
- alert(pageContent);
- // content-div langsam ausblenden
- $('#vz_content').fadeOut("slow", function(){
- // wenn das ausblenden fertig ist, inhalt an das content-div übergeben
- $('#vz_content').append(pageContent);
- // content-div langsam wieder einblenden lassen
- $('#vz_content').fadeIn("slow");
- 
- // oder in kurzer form (vorzuziehen)
- // $("#content").html(pageContent).fadeIn("slow");
- });
- });*/
-
-//pageToLoad = pageToLoad + " .divcontent";
-
-//$('#vz_content').load(pageToLoad)
-
-// wichtig! sonst wird der a-link im browser aufgerufen!
-
-                  /*$('#soapTest').live('click', function(){
-                                      var productServiceUrl = 'http://134.60.71.103:8080/axis2/services/LDAPService/';
-                                      // Preferably write this out from server side
-                   
-                                      function beginAuthByMail(){
-                                      var soapMessage =
-                                      '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" soap:encodingStyle="http://www.w3.org/2001/12/soap-encoding"> \
-                                      <soap:Body> \
-                                      <authbymail xmlns="http://ttdev.com/ls/"> \
-                                      <mail>'marcel.reichersdoerfer@uni-ulm.de'</mail> \
-                                      </authbymail> \
-                                      </soap:Body> \
-                                      </soap:Envelope>';
-                                      
-                                      $.ajax({
-                                             url: productServiceUrl,
-                                             type: "POST",
-                                             dataType: "xml",
-                                             data: soapMessage,
-                                             complete: endAuthByMail,
-                                             contentType: "text/xml; charset=\"utf-8\""
-                                             });
-                                      
-                                      return false;
-                                      }
-                                      
-                                      function endAuthByMail(xmlHttpRequest, status){
-                                      $(xmlHttpRequest.responseXML)
-                                      .find('authbymailResult')
-                                      .each(function()
-                                            {
-                                            var name = $(this).find('Name').text();
-                                            });
-                                      }
-                                      
-                                      });
-                  
-                  /*function deleteSpaces(string) {
-                   var split = string.split('<');
-                   string = "";
-                   for(i=0; i<split.length; i++) {
-                   if(split[i] != "") string = string+"<br><br>"+split[i];
-                   else string = string+""+split[i];
-                   }
-                   return string;
-                   }*/
-    
-    //If Menue Button is clicked then slide to navigation or back to site
-    //$('#menu').pageslide();
+/*------------------- Settings ------------------------------------------------------------------------------------------------------------*/
+	
+	$('#settings').live('pageshow', function(){
+		$('#settings').find('div.headline').text(getLangObject().pages.settings.headline);
+		$('#settings').find('div.content').append("<div data-role=\"collapsible\" data-inset=\"false\" data-collapsed-icon=\"arrow-d\" data-expanded-icon=\"arrow-l\" data-iconpos=\"right\" class=\"lecture_directory_acc_element\">"+
+													"<h3 class=\'lecture_directory_headings\'><font>"+getLangObject().pages.settings.selectmenu_title+"<font></h3>"+
+												  	"<p>"+
+												  		"<select name=\"select-choice-0\" id=\"settings_selectmenu\">"+
+												  			"<option value=\"en\">"+getLangObject().pages.settings.lang_option_one+"</option>"+
+												  			"<option value=\"de\">"+getLangObject().pages.settings.lang_option_two+"</option>"+
+												  		"</select></p>"+
+												  "</div>").trigger('create');
+		$('#settings_selectmenu option[value='+getLanguage()+']').attr("selected", "selected");
+		$('#settings_selectmenu').selectmenu();
+		$('#settings_selectmenu').selectmenu('refresh', true);
+	});
+				  
+	$('#settings_selectmenu').live('change', function() {
+		setLanguage($(this).val());
+		$.mobile.changePage(window.location.href, { transition: 'none', reloadPage: true });
+	});
 });

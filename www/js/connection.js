@@ -6,6 +6,11 @@ document.addEventListener("offline", onOffline, false);
 
 var online = false;//True if internet connectivity, else false
 
+//call on system start
+function onDeviceReady() {
+	alert("Status bei Systemstart: "+checkConnection());
+}
+
 //call if internet is available again
 function onOnline() {
 	setOnlineStatus(true);
@@ -14,11 +19,6 @@ function onOnline() {
 //call if disconnected
 function onOffline() {
 	setOnlineStatus(false);
-}
-
-//call on system start
-function onDeviceReady() {
-	checkConnection();
 }
 
 //call when system is ready
@@ -35,9 +35,11 @@ function checkConnection() {
 	states[Connection.NONE]     = 'No network connection';
 	
 	if(states[networkState] == 'Unknown connection' || states[networkState] == 'No network connection') {//if no or unknown connection
-		setOnlineStatus(false);//set connectivity to false
+		//setOnlineStatus(false);//set connectivity to false
+		return false;
 	} else {
-		setOnlineStatus(true);//set connectivity to true
+		//setOnlineStatus(true);//set connectivity to true
+		return true;
 	}
 }
 

@@ -54,11 +54,23 @@ body {
     width: auto;
     overflow: visible; 
     overflow-x: hidden;
+	height: 90%;
 }
 
-/*for each content except navigation*/
-.content {
-    height: 90%;
+.main_menu_button {
+    background-color: #BC4D5C;
+    background-image:linear-gradient(top, #BC4D5C 0%, #B53849 80%);
+    background-image:-webkit-linear-gradient(top, #BC4D5C 0%, #B53849 80%);
+    background-image:-ms-linear-gradient(top, #BC4D5C 0%, #B53849 80%);
+    border-left: 1px solid #111111;
+    border-top: 1px solid #111111;
+    border-bottom: 1px solid #111111;
+    border-right: 1px solid #111111;
+    color: #000000;
+}
+
+a.main_menu_button {
+    text-decoration: none;
 }
 
 /*----------------------------------------- Lecture Directory -------------------------------------------*/
@@ -108,22 +120,6 @@ body {
     width: device-width;
 }
 
-.main_menu_button {
-    background-color: #BC4D5C;
-    background-image:linear-gradient(top, #BC4D5C 0%, #B53849 80%);
-    background-image:-webkit-linear-gradient(top, #BC4D5C 0%, #B53849 80%);
-    background-image:-ms-linear-gradient(top, #BC4D5C 0%, #B53849 80%);
-    border-left: 1px solid #111111;
-    border-top: 1px solid #111111;
-    border-bottom: 1px solid #111111;
-    border-right: 1px solid #111111;
-    color: #000000;
-}
-
-a.main_menu_button {
-    text-decoration: none;
-}
-
 /*------------------------------------------- Navigation ------------------------------------------------*/
 /*only for navigation content*/
 #navigation {
@@ -133,11 +129,14 @@ a.main_menu_button {
 	padding: 0px;
 }
 
-/*for each unordered list within an unordered list*/
-.inner_nav_ul {
-    margin: 0px;
-    padding: 0px;
-	margin-bottom: -18px;
+/*only navigation content have to fill 100% at minimum*/
+#nav_content {
+    height: 100%;
+}
+
+ul {
+	margin: 0px;
+	padding: 0px;
 }
 
 /*only headlines in navigation*/
@@ -146,6 +145,10 @@ li.nav_headline {
     border-bottom: 1px solid #444444;
     border-left: 0px;
     border-right: 0px;
+	padding-left: 5px;
+	height: 30px;
+	line-height: 30px;
+	margin: 0px;
 }
 
 /*only headlines in navigation*/
@@ -161,12 +164,18 @@ li.nav_headline {
 }
 
 /*for each list item in navigation*/
+li.nav_listitem {
+	margin: 0px;
+	/*padding-top: 17px;
+    padding-bottom: 17px;*/
+	text-align: left;
+}
+
+/*for each list item in navigation*/
 .nav_listitem {
     list-style: none;
     padding-left: 10px;
-    padding-top: 14px;
-    padding-bottom: 14px;
-    font-size: 11pt;
+    font-size: 12pt;
     text-decoration: none;
     background-color: #BCCCD4;
     background-image:linear-gradient(top, #BCCCD4 0%, #A5BBC5 80%);
@@ -175,14 +184,17 @@ li.nav_headline {
     border-bottom: 1px solid #444444;
     border-left: 0px;
     border-right: 0px;
-	margin-top: -18px;
 }
 
 /*for each Link in navigation*/
 a.nav_a {
     color: #111111;
     text-decoration: none;
-    padding-left: 10px;
+	width: 100%;
+	padding-left: 10px;
+	margin: 0px;
+	height: 50px;
+	line-height: 50px;
 }
 
 /*---------------------------------------------------------------------------------------------------------*/
