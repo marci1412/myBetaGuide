@@ -64,7 +64,7 @@ $(document).ready(function(){
                   
     $('#lecture_times').live('pageshow', function(){
 		$('#lecture_times').find('div.headline').text(getLangObject().pages.lecture_times.headline);
-		if(checkConnection()) {
+		//if(checkConnection()) {
 			alert("Aktueller Status: "+checkConnection());
         	var url = 'http://www.uni-ulm.de/studium/studienorganisation/vorlesungszeiten.html';
         	$.get(url, function(data) {
@@ -82,9 +82,9 @@ $(document).ready(function(){
                         	                        "</tr>"+rows+
                             	                "</table>");
         	});
-		} else {//if no internet connection available
+		/*} else {//if no internet connection available
 			alert("Aktueller Status: "+checkConnection());
-		}
+		}*
     });
     
     //This function is for determining the entire row values for lecture times
